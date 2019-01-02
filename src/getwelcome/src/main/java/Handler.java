@@ -11,7 +11,6 @@ public class Handler {
        String responseBody = new String(Files.readAllBytes(Paths.get(getClass().getResource("welcome.html").toURI())));
         HashMap response = new HashMap();
         HashMap headers = new HashMap();
-
         response.put("statusCode", "200");
         headers.put("Content-Type", "text/html");
         response.put("headers", headers);
