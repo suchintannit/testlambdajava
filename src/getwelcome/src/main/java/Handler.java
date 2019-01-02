@@ -8,8 +8,10 @@ import java.net.URISyntaxException;
 public class Handler {
     public Map handler(Map message) throws IOException, URISyntaxException {
         System.out.println(message);
-        String responseBody = new String(Files.readAllBytes(Paths.get(getClass().getResource("welcome.html").toURI())));
-
+       // String responseBody = new String(Files.readAllBytes(Paths.get(getClass().getResource("welcome.html").toURI())));
+    URI uri = new URI("welcome.html");
+    uri.normalize();
+    Desktop.getDesktop().browse(uri);
         HashMap response = new HashMap();
         HashMap headers = new HashMap();
 
